@@ -1,7 +1,7 @@
 import { FilterYearType } from './Expenses';
 import './ExpensesFilter.css';
 
-export type ExpensesFilterProps<T extends FilterYearType> = {
+type ExpensesFilterPropsType<T extends FilterYearType> = {
   onChangeFilter: (yearValue: T) => void;
   selected: T;
   years: T[];
@@ -11,7 +11,7 @@ const ExpensesFilter = <T extends FilterYearType>({
   onChangeFilter,
   selected,
   years,
-}: ExpensesFilterProps<T>) => {
+}: ExpensesFilterPropsType<T>) => {
   const dropdownChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onChangeFilter(e.target.value as T);
   };

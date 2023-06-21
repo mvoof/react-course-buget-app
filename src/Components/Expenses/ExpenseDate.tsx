@@ -1,9 +1,9 @@
-import { ExpenseItemProps } from './Expenseitem';
+import { ExpenseDataType } from './Expenseitem';
 import './ExpenseDate.css';
 
-type ExpenseDateProps = Pick<ExpenseItemProps, 'date'>;
+type ExpenseDatePropsType = Pick<ExpenseDataType, 'date'>;
 
-const ExpenseDate = ({ date }: ExpenseDateProps) => {
+const ExpenseDate = ({ date }: ExpenseDatePropsType) => {
   return (
     <div className="expense-date">
       <div className="expense-date__day">

@@ -1,13 +1,13 @@
-import { ExpenseData } from '../Expenses/Expenseitem';
+import { ExpenseDataType } from '../Expenses/Expenseitem';
 import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
 
-export type NewExpenseProps = {
-  onAddExpense: (expense: ExpenseData) => void;
+type NewExpensePropsType = {
+  onAddExpense: (expense: ExpenseDataType) => void;
 };
 
-const NewExpense = ({ onAddExpense }: NewExpenseProps) => {
-  const saveExpenseData = (enteredData: ExpenseData) => {
+const NewExpense = ({ onAddExpense }: NewExpensePropsType) => {
+  const saveExpenseData = (enteredData: ExpenseDataType) => {
     const expenseData = {
       ...enteredData,
       id: Math.random().toString(),

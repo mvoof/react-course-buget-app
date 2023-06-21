@@ -1,5 +1,5 @@
 import './App.css';
-import { ExpenseData } from './Components/Expenses/Expenseitem';
+import { ExpenseDataType } from './Components/Expenses/Expenseitem';
 import Expenses from './Components/Expenses/Expenses';
 import NewExpense from './Components/NewExpense/NewExpense';
 
@@ -35,7 +35,7 @@ const expenses: ExpensesType = [
 ];
 
 const App = () => {
-  const addExpenseHandler = (expense: ExpenseData) => {
+  const addExpenseHandler = (expense: ExpenseDataType) => {
     console.log(expense);
   };
 

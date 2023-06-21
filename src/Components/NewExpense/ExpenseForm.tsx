@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './ExpenseForm.css';
-import { ExpenseData } from '../Expenses/Expenseitem';
+import { ExpenseDataType } from '../Expenses/Expenseitem';
 
-export type ExpenseFormProps = {
-  onSaveExpenseData: (expenseData: ExpenseData) => void;
+type ExpenseFormPropsType = {
+  onSaveExpenseData: (expenseData: ExpenseDataType) => void;
 };
 
-const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormProps) => {
+const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormPropsType) => {
   const [userInput, setUserInput] = useState({
     title: '',
     amount: '',
@@ -28,7 +28,7 @@ const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormProps) => {
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const expenseData: ExpenseData = {
+    const expenseData: ExpenseDataType = {
       title: userInput.title,
       amount: userInput.amount,
       date: new Date(userInput.date),

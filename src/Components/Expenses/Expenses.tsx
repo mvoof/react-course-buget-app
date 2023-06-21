@@ -10,11 +10,11 @@ export type FilterYearArrayType = FilterYearType[];
 
 const years: FilterYearArrayType = ['2022', '2021', '2020', '2019'];
 
-export type ExpensesProps = {
+type ExpensesPropsType = {
   items: ExpensesType;
 };
 
-const Expenses = ({ items }: ExpensesProps) => {
+const Expenses = ({ items }: ExpensesPropsType) => {
   const [filteredYear, setFilteredYear] = useState<FilterYearType>('2019');
 
   const filterChangeHandler = (value: FilterYearType) => {
