@@ -3,7 +3,8 @@ import './ExpenseItem.css';
 import Card from '../UI/Card';
 import { ExpenseItemType } from '../../App';
 
-export type ExpenseItemProps = Omit<ExpenseItemType, 'id'>;
+export type ExpenseData = Omit<ExpenseItemType, 'id'>;
+export type ExpenseItemProps = ExpenseData;
 
 function ExpenseItem({ title, amount, date }: ExpenseItemProps) {
   return (

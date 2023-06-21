@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import './ExpenseForm.css';
+import { ExpenseData } from '../Expenses/Expenseitem';
 
-const ExpenseForm = () => {
+export type ExpenseFormProps = {
+  onSaveExpenseData: (expenseData: ExpenseData) => void;
+};
+
+const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormProps) => {
   const [userInput, setUserInput] = useState({
-    tittle: '',
+    title: '',
     amount: '',
     date: '',
   });
@@ -23,35 +28,34 @@ const ExpenseForm = () => {
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const expenseData = {
-      tittle: userInput.tittle,
+    const expenseData: ExpenseData = {
+      title: userInput.title,
       amount: userInput.amount,
       date: new Date(userInput.date),
     };
 
+    onSaveExpenseData(expenseData);
+
     setUserInput({
-      tittle: '',
+      title: '',
       amount: '',
       date: '',
     });
-
-    console.log(expenseData);
-    
   };
 
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
-          <label htmlFor="tittleInput">Tittle</label>
+          <label htmlFor="titleInput">Title</label>
           <input
             type="text"
-            name="tittleInput"
-            id="tittleInput"
+            name="titleInput"
+            id="titleInput"
             onChange={(e) => {
-              userInputChangeHandler(e, 'tittle');
+              userInputChangeHandler(e, 'title');
             }}
-            value={userInput.tittle}
+            value={userInput.title}
           />
         </div>
 
