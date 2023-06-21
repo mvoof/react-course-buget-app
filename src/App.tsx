@@ -34,7 +34,7 @@ const expenses: ExpensesType = [
   },
 ];
 
-function App() {
+const App = () => {
   const addExpenseHandler = (expense: ExpenseData) => {
     console.log(expense);
   };
@@ -45,6 +45,6 @@ function App() {
       <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default App;

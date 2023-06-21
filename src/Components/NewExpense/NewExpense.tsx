@@ -6,7 +6,7 @@ export type NewExpenseProps = {
   onAddExpense: (expense: ExpenseData) => void;
 };
 
-function NewExpense({ onAddExpense }: NewExpenseProps) {
+const NewExpense = ({ onAddExpense }: NewExpenseProps) => {
   const saveExpenseData = (enteredData: ExpenseData) => {
     const expenseData = {
       ...enteredData,
@@ -21,6 +21,6 @@ function NewExpense({ onAddExpense }: NewExpenseProps) {
       <ExpenseForm onSaveExpenseData={saveExpenseData} />
     </div>
   );
-}
+};
 
 export default NewExpense;

@@ -6,7 +6,7 @@ import { ExpenseItemType } from '../../App';
 export type ExpenseData = Omit<ExpenseItemType, 'id'>;
 export type ExpenseItemProps = ExpenseData;
 
-function ExpenseItem({ title, amount, date }: ExpenseItemProps) {
+const ExpenseItem = ({ title, amount, date }: ExpenseItemProps) => {
   return (
     <Card className="expense-item">
       <ExpenseDate date={date} />
@@ -16,6 +16,6 @@ function ExpenseItem({ title, amount, date }: ExpenseItemProps) {
       </div>
     </Card>
   );
-}
+};
 
 export default ExpenseItem;

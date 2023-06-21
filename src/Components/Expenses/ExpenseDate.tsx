@@ -3,7 +3,7 @@ import './ExpenseDate.css';
 
 type ExpenseDateProps = Pick<ExpenseItemProps, 'date'>;
 
-function ExpenseDate({ date }: ExpenseDateProps) {
+const ExpenseDate = ({ date }: ExpenseDateProps) => {
   return (
     <div className="expense-date">
       <div className="expense-date__day">
@@ -23,6 +23,6 @@ function ExpenseDate({ date }: ExpenseDateProps) {
       </div>
     </div>
   );
-}
+};
 
 export default ExpenseDate;

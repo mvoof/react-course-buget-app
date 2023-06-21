@@ -14,7 +14,7 @@ export type ExpensesProps = {
   items: ExpensesType;
 };
 
-function Expenses({ items }: ExpensesProps) {
+const Expenses = ({ items }: ExpensesProps) => {
   const [filteredYear, setFilteredYear] = useState<FilterYearType>('2019');
 
   const filterChangeHandler = (value: FilterYearType) => {
@@ -34,6 +34,6 @@ function Expenses({ items }: ExpensesProps) {
       ))}
     </Card>
   );
-}
+};
 
 export default Expenses;
