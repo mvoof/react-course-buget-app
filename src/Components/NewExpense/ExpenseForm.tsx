@@ -4,7 +4,7 @@ import './ExpenseForm.css';
 const ExpenseForm = () => {
   const [userInput, setUserInput] = useState({
     tittle: '',
-    amount: '0.1',
+    amount: '',
     date: '',
   });
 
@@ -29,7 +29,14 @@ const ExpenseForm = () => {
       date: new Date(userInput.date),
     };
 
+    setUserInput({
+      tittle: '',
+      amount: '',
+      date: '',
+    });
+
     console.log(expenseData);
+    
   };
 
   return (
