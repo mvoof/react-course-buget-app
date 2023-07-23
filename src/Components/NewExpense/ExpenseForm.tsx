@@ -4,9 +4,10 @@ import { ExpenseDataType } from '../Expenses/Expenseitem';
 
 type ExpenseFormPropsType = {
   onSaveExpenseData: (expenseData: ExpenseDataType) => void;
+  onCancel: () => void;
 };
 
-const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormPropsType) => {
+const ExpenseForm = ({ onSaveExpenseData, onCancel }: ExpenseFormPropsType) => {
   const [userInput, setUserInput] = useState({
     title: '',
     amount: '',
@@ -89,6 +90,9 @@ const ExpenseForm = ({ onSaveExpenseData }: ExpenseFormPropsType) => {
       </div>
 
       <div className="new-expense__actions">
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
