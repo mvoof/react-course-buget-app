@@ -4,6 +4,7 @@ import Card from '../UI/Card';
 import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 
 export type FilterYearType = '2022' | '2021' | '2020' | '2019';
 export type FilterYearArrayType = FilterYearType[];
@@ -32,6 +33,8 @@ const Expenses = ({ expenses }: ExpensesPropsType) => {
         onChangeFilter={filterChangeHandler}
         selected={filteredYear}
       />
+
+      <ExpensesChart expenses={filteredExpenses} />
 
       <ExpensesList items={filteredExpenses} />
     </Card>
