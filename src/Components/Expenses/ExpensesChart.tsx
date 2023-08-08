@@ -64,9 +64,6 @@ const ExpensesChart = ({ expenses }: ExpensesChartPropsType) => {
 
   for (const expense of expenses) {
     const expenseMonth = expense.date.getMonth(); // starting at Jan => 0
-
-    console.log(expenseMonth);
-    
     chartDataPoints[expenseMonth].value += +expense.amount;
   }
 
